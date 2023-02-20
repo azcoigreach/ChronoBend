@@ -12,7 +12,7 @@ from adafruit_rgb_display import st7789
 
 from PIL import Image, ImageDraw, ImageFont
 
-CONTEXT_SETTINGS = dict(auto_envvar_prefix="TINKER")
+CONTEXT_SETTINGS = dict(auto_envvar_prefix="CB")
 
 logger = logging.getLogger(__name__)
 coloredlogs.install(level='DEBUG')
@@ -83,7 +83,7 @@ cmd_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "commands")
 font_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), "fonts"))
 
 
-class TinkerCLI(click.MultiCommand):
+class ChronoBendCLI(click.MultiCommand):
     def list_commands(self, ctx):
         rv = []
         for filename in os.listdir(cmd_folder):
@@ -94,17 +94,17 @@ class TinkerCLI(click.MultiCommand):
 
     def get_command(self, ctx, name):
         try:
-            mod = __import__(f"tinker.commands.cmd_{name}", None, None, ["cli"])
+            mod = __import__(f"cb.commands.cmd_{name}", None, None, ["cli"])
         except ImportError:
             return
         return mod.cli
 
 
-@click.command(cls=TinkerCLI, context_settings=CONTEXT_SETTINGS)
+@click.command(cls=ChronoBendCLI, context_settings=CONTEXT_SETTINGS)
 @click.option("-v", "--verbose", is_flag=True, help="Enables verbose mode.")
 @pass_environment
 async def cli(ctx, verbose):
-    """Tinker Server command line interface."""
+    """cb Server command line interface."""
     ctx.verbose = verbose
     ctx.display = display
     ctx.buttonA = buttonA

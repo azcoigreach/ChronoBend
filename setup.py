@@ -3,7 +3,7 @@ from setuptools import setup
 # apt-get install fonts-dejavu python3-numpy python3-pil
 
 setup(
-    name="chronobender",
+    name="ChronoBend",
     version="0.1",
     author="AZcoigreach",
     author_email="azcoigreach@gmail.com",
