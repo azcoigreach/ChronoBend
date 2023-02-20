@@ -7,7 +7,7 @@ setup(
     version="0.1",
     author="AZcoigreach",
     author_email="azcoigreach@gmail.com",
-    packages=["cb", "cb.commands", "cb.configs"],
+    packages=["cb", "cb.commands"],
     include_package_data=True,
     install_requires=[
         "click",
