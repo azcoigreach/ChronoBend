@@ -21,6 +21,7 @@ setup(
         "asyncclick",
         "anyio",
         "RPi.GPIO",
+        "Pillow"
         ],
     entry_points="""
         [console_scripts]
