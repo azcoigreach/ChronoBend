@@ -2,7 +2,7 @@ import os
 import time
 import asyncio
 import asyncclick as click
-from tinker.cli import pass_environment
+from cb.cli import pass_environment
 
 from PIL import Image, ImageDraw, ImageFont
 

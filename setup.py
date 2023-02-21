@@ -19,6 +19,7 @@ setup(
         "ifaddr",
         "speedtest-cli",
         "asyncclick",
+        "anyio",
         ],
     entry_points="""
         [console_scripts]
