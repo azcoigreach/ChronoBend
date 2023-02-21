@@ -20,6 +20,7 @@ setup(
         "speedtest-cli",
         "asyncclick",
         "anyio",
+        "RPi.GPIO",
         ],
     entry_points="""
         [console_scripts]
